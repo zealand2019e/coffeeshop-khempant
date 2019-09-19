@@ -7,16 +7,22 @@ namespace CoffeeShopConsoleApp
     /// <summary>
     /// A class that is used for coffe orders
     /// </summary>
-    public class Coffee
+    public abstract class Coffee
     {
         /// <summary>
-        /// returns the price of the coffee
-        /// It's possible to override this method, beacuse it is virtual 
-        /// </summary>
-        /// <returns>20 dkr</returns>
-        public virtual int price()
+        public Coffee()
+        {
+
+        }
+        public virtual int Price()
         {
             return 20;
+        }
+        public abstract string Strength();
+        public abstract string TypeOfCoffee();
+        public override string ToString()
+        {
+            return $"Iam a {this.TypeOfCoffee()}, and my price is {this.Price()}, and the strength of me is {this.Strength()} ";
         }
 
     }
